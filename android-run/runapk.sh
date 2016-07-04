@@ -5,7 +5,7 @@ if [[ -z ${1+x} || -z ${2+x} || -z ${3+x} ]]; then
 	exit 1
 fi
 echo $PATH
-emulator64-x86 -avd "API23-x86" &
+emulator64-arm -avd "API23-arm" &
 PID=$!
 bootanim=""
 failcounter=0
