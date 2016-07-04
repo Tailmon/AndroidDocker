@@ -13,8 +13,8 @@ RUN cd /opt && \
     wget -q ${ANDROID_SDK_URL} && \
     tar -xzf ${ANDROID_SDK_FILENAME} && \
     rm ${ANDROID_SDK_FILENAME} && \
-    echo y | android update sdk --no-ui -a --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository,sys-img-x86-google_apis-23,addon-google_apis-google-23
-RUN echo no | android create avd -n "API23-x86" -t "android-23" -b google_apis/x86
+    echo y | android update sdk --no-ui -a --filter tools,platform-tools,${ANDROID_API_LEVELS},build-tools-${ANDROID_BUILD_TOOLS_VERSION},extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository,sys-img-x86-google_apis-23,addon-google_apis-google-23,sys-img-armeabi-v7a-google_apis-23
+RUN echo no | android create avd -n "API23-x86" -t "android-23" -b google_apis/armeabi-v7a
 # QT Dependencies
 RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-7.noarch.rpm && \
     rpm -ivh epel-release-7-7.noarch.rpm && \
@@ -24,4 +24,3 @@ RUN mkdir -p /opt/project
 ADD runapk.sh /usr/local/bin
 WORKDIR /opt/project
 ENTRYPOINT ["runapk.sh"]
-
