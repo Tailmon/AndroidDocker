@@ -1,0 +1,2 @@
+Run:
+docker run --privileged -v $PWD:/opt/project -v /dev/kvm:/dev/kvm -v /tmp/.X11-unix:/tmp/.X11-unix -it android-run PATH_TO_APK app.id MainActivity
