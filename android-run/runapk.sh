@@ -6,7 +6,6 @@ if [[ -z ${1+x} || -z ${2+x} || -z ${3+x} ]]; then
 fi
 echo $PATH
 emulator64-arm -avd "API23-arm" &
-PID=$!
 bootanim=""
 failcounter=0
 until [[ "$bootanim" =~ "stopped" ]]; do
@@ -22,4 +21,4 @@ until [[ "$bootanim" =~ "stopped" ]]; do
 done
 adb install -r $1
 adb shell am start -a android.intent.action.MAIN -n $2/.$3
-wait $PID
+adb logcat $2:D
