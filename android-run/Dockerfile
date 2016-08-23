@@ -6,7 +6,7 @@ RUN echo no | android create avd -n "API23" -t "android-23" -b google_apis/armea
 ENV DISPLAY :1
 # QT Dependencies
 RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm && \
-    rpm -ivh epel-release-7-7.noarch.rpm && \
+    rpm -ivh epel-release-7-8.noarch.rpm && \
     rm *.rpm
 RUN yum update -y && yum install -y qt5-qtbase qt5-qtbase-gui pciutils
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
