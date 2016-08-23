@@ -1,6 +1,7 @@
 FROM android:latest
 MAINTAINER Pablo Sanabria "psanabria@uc.cl"
-RUN echo y | android update sdk --no-ui -a --filter sys-img-x86-google_apis-23,addon-google_apis-google-23,sys-img-armeabi-v7a-google_apis-23
+RUN echo y | android update sdk --no-ui -a --filter sys-img-armeabi-v7a-google_apis-23
+# RUN echo y | android update sdk --no-ui -a --filter sys-img-x86-google_apis-23,addon-google_apis-google-23,sys-img-armeabi-v7a-google_apis-23
 RUN echo no | android create avd -n "API23" -t "android-23" -b google_apis/armeabi-v7a
 ENV DISPLAY :1
 # QT Dependencies
