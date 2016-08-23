@@ -5,7 +5,7 @@ if [[ -z ${1+x} || -z ${2+x} || -z ${3+x} ]]; then
 	exit 1
 fi
 echo $PATH
-emulator -avd "API23" &
+emulator64-arm -avd "API23" &
 bootanim=""
 failcounter=0
 until [[ "$bootanim" =~ "stopped" ]]; do
