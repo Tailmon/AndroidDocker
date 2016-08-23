@@ -1,7 +1,7 @@
 FROM centos:latest
 MAINTAINER Pablo Sanabria "psanabria@uc.cl"
 RUN yum update -y && yum install -y install java-1.8.0-openjdk-devel wget unzip
-ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.91-1.b14.el7_2.x86_64
+ENV JAVA_HOME /usr/lib/jvm/java
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_FILENAME android-sdk_r24.4.1-linux.tgz
 ENV ANDROID_SDK_URL http://dl.google.com/android/${ANDROID_SDK_FILENAME}
