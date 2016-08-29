@@ -10,7 +10,7 @@ RUN kvm-mknod.sh
 RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm && \
     rpm -ivh epel-release-7-8.noarch.rpm && \
     rm *.rpm
-RUN yum update -y && yum install -y qt5-qtbase qt5-qtbase-gui pciutils
+RUN yum update -y && yum install -y qt5-qtbase qt5-qtbase-gui pciutils && yum -y clean all
 RUN dbus-uuidgen > /var/lib/dbus/machine-id
 RUN mkdir -p /opt/project
 ADD runapk.sh /usr/local/bin
