@@ -1,6 +1,6 @@
 FROM centos:latest
 MAINTAINER Pablo Sanabria "psanabria@uc.cl"
-RUN yum update -y && yum install -y install java-1.8.0-openjdk-devel wget unzip && yum -y clean
+RUN yum update -y && yum install -y install java-1.8.0-openjdk-devel wget unzip && yum -y clean all
 ENV JAVA_HOME /usr/lib/jvm/java
 ENV ANDROID_HOME /opt/android-sdk-linux
 ENV ANDROID_SDK_FILENAME android-sdk_r24.4.1-linux.tgz
